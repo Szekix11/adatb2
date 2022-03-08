@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="formazas.css" type="text/css">
+
+          		<script>
+		honapok=new Array("január","február","március","április","május","június","július","augusztus","szeptember","november","december")
+		napok=new Array("vasárnap", "hétfő","kedd","szerda","csütörtök","péntek","szombat")
+
+		function idoki()
+		{
+		var Digital=new Date();
+		var ev=Digital.getFullYear();
+		var ho=Digital.getMonth();
+		var nap=Digital.getDate();
+		var napnev=napok[Digital.getDay()]
+		var hours=Digital.getHours();
+		var minutes=Digital.getMinutes();
+		var seconds=Digital.getSeconds();
+		document.getElementById('hely').innerHTML=ev+". "+honapok[ho]+" "+nap+". "+napnev+" "+hours+":"+((minutes<10)?0:"")+minutes+":"+((seconds<10)?0:"")+seconds
+		//  setTimeout("idoki()",60000) // Percenként hívja csak meg, nem kell a mp. kiírás
+		setTimeout("idoki()",1000) // Másodpercenként hívja meg, teszhez jobb
+		}
+		</script>
+
+
+  </head>
+  <body background="images.jpg">
+           <h1 align="center">Regisztrált adatok</h1>
+           <form action = "" method="post">
+           <table border=5 >
+            <thead>
+                <td>Azonosító</td>
+                <td>Név</td>
+                <td>Email</td>
+                <td>Lakcím</td>
+                <td>Telefonszám</td>
+                <td>IME</td>
+                <td>Vételi ár</td>
+                <td>Készülék típus</td>
+                <td>Dátum</td>
+            </thead >
+        <tbody id="view"></tbody>
+        </table>
+        </form>
+      <table><td><script src="javascript.js"></script> </td></table>
+</body>
+</html>

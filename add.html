@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <link rel="stylesheet" href="formazas.css" type="text/css">
+    		<script>
+		honapok=new Array("január","február","március","április","május","június","július","augusztus","szeptember","november","december")
+		napok=new Array("vasárnap", "hétfő","kedd","szerda","csütörtök","péntek","szombat")
+
+		function idoki()
+		{
+		var Digital=new Date();
+		var ev=Digital.getFullYear();
+		var ho=Digital.getMonth();
+		var nap=Digital.getDate();
+		var napnev=napok[Digital.getDay()]
+		var hours=Digital.getHours();
+		var minutes=Digital.getMinutes();
+		var seconds=Digital.getSeconds();
+		document.getElementById('hely').innerHTML=ev+". "+honapok[ho]+" "+nap+". "+napnev+" "+hours+":"+((minutes<10)?0:"")+minutes+":"+((seconds<10)?0:"")+seconds
+		//  setTimeout("idoki()",60000) // Percenként hívja csak meg, nem kell a mp. kiírás
+		setTimeout("idoki()",1000) // Másodpercenként hívja meg, teszhez jobb
+		}
+		</script>
+
+
+
+
+
+    <title>Alex Gsm</title>
+</head>
+<body background="images.jpg"; onload="idoki()">
+<table border="5" background="images.jpg" align="right">
+<tr><td>
+<h1><div id="hely"></div></h1>
+</td></tr>
+</table>
+    <h1 align="center">Alex GSM</h1>
+    <h2 align="center">Kérlek add meg az alábbi adatokat az adatbázisban való felvételhez!</h2>
+    <form action = "" method="post">
+    <table align="center">
+        <tr><td>Név(Eladó)</td><td><input type="text" id="name" name="name"></td></tr>
+        <tr><td>Email</td><td><input type="email" id="email" name="email"></td></tr>
+        <tr><td>Lakcím</td><td><input type="text" id="address" name="address"></td></tr>
+        <tr><td>Telefonszám</td><td><input type="text" id="phonenumber" name="phonenumber"></td></tr>
+        <tr><td>IME</td><td><input type="text" id="ime" name="ime"></td></tr>
+        <tr><td>Vételi ár</td><td><input type="text" id="buy" name="buy"></td></tr>
+        <tr><td>Készülék típus</td><td><input type="text" id="phonetype" name="phonetype"></td></tr>
+        <tr><td>Dátum</td><td><input type="text" id="date" name="date"></td></tr>
+        <tr><td><button onclick="sendPost()" id="sub" type="submit" value="Submit">Rögzítés</button></td></tr>
+    </table>
+    </form>
+    <script src="add.js">
+    </script>
+
+</body>
+</html>
+
+
+
+
+
